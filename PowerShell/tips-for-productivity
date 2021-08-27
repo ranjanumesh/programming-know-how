@@ -1,0 +1,24 @@
+# 1. how to shorten the command line path
+
+# Type $profile and hit enter. This will display the profile path PowerShell relies on, even if it doesn't exist (it didn't for me).
+ >$profile
+ C:\Users\[username]\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+ 
+ # You may have to create both the WindowsPowerShell folder and the Microsoft.PowerShell_profile.ps1 file and then add below snippet in the file.
+ 
+ function prompt {
+  $p = Split-Path -leaf -path (Get-Location)
+  "$p> "
+}
+
+# Now restart the terminal & see If you get a message that says you are not allowed to run scripts, then you need to copy/paste below line in PowerShell:
+# see more details on that error here - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# Now restart the terminal again and you should see only current directory like how you may have seen in Linux environment. 
+
+
+# Other ways to achieve temporary session level settings to get only current directory would be to run below commands
+Function Prompt { "$( ( get-item $pwd ).Name )>" } or 
+Function Prompt { "$( ( Get-Location | Get-Item ).Name )>" }
