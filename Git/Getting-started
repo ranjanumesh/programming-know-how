@@ -1,4 +1,4 @@
-Insall Git and perofrm global configuration
+#Insall Git and perofrm global configuration
 
 git config --global user.name "ranjan umesh"
 
