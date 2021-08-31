@@ -1,0 +1,9 @@
+Insall Git and perofrm global configuration
+
+git config --global user.name "ranjan umesh"
+
+git config --global user.email "ranjanu.on@gmail.com" 
+
+git config --global core.editor "code --wait --new-window"
+
+git config --edit --global
