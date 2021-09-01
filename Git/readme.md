@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 mkdir "C:\Users\rumesh\OneDrive - Capgemini\Self\Traning\Git\pluralsight"
 
 cd "C:\Users\rumesh\OneDrive - Capgemini\Self\Traning\Git\pluralsight"
